@@ -3,12 +3,12 @@
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
-  root 'users/items#index'
+  root 'visitor/items#index'
   # root 'administration/items#index'
 
   get '/home', to: 'home#landing_page'
 
-  namespace 'users' do
+  namespace 'visitor' do
     get '/', to: 'items#index'
     resources :items
   end
