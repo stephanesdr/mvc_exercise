@@ -23,8 +23,6 @@ class Item < ApplicationRecord
   end
 
   def self.average_price
-    array_pricing = []
-    Item.find_each { |el| array_pricing << el.original_price }
-    array_pricing.sum / array_pricing.length unless array_pricing.length.zero?
+    Item.average(:original_price).to_s
   end
 end
