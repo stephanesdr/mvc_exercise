@@ -40,7 +40,7 @@ RSpec.describe Item, type: :model do
     end
 
     context 'when the item has not a discount' do
-      let(:item) { build(:item_without_discount, original_price: 100.00) }
+      let(:item) { build(:item, original_price: 100.00) }
 
       it { expect(item.price).to eq(100.00) }
       it { expect(item.discount_percentage).to eq(0) }
