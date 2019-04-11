@@ -42,13 +42,13 @@ RSpec.describe Item, type: :model do
     context "when the original_price is not positif " do
       let(:item) { build(:item, original_price: -100.00) }
 
-      it { expect(item).to_not be_valid }
+      it { expect(item).not_to be_valid }
     end
 
     context "when the discount_percentage is not positif " do
       let(:item) { build(:item, original_price: 100.00, discount_percentage: -30.00) }
 
-      it { expect(item).to_not be_valid }
+      it { expect(item).not_to be_valid }
     end
 
     context 'when the item has not a discount' do
@@ -59,11 +59,12 @@ RSpec.describe Item, type: :model do
     end
   end
 
-  describe '#self.average_price' do 
+  describe '#self.average_price' do
     it "returns the item: average_price" do
-      item1 = create(:item, original_price: 80.00)
-      item2 = create(:item_with_discount, original_price: 100.00, discount_percentage: 20.00)
-      expect(Item.average_price).to eq (80.00)
+      create(:item, original_price: 80.00)
+      create(:item_with_discount, original_price: 100.00, discount_percentage: 20.00)
+
+      expect(Item.average_price).to eq(80.00)
     end
   end
 end

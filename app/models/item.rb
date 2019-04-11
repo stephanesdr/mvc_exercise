@@ -23,8 +23,6 @@ class Item < ApplicationRecord
   end
 
   def self.average_price
-    ((where(has_discount: false).average(:original_price)) + (where(has_discount: true).average("original_price - (original_price * discount_percentage/100)"))) / 2
+    (where(has_discount: false).sum(:original_price) + where(has_discount: true).sum("original_price - (original_price * discount_percentage/100)")) / count
   end
 end
-
-
