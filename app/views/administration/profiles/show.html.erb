@@ -1,8 +1,21 @@
-<h1>
-	<%= @profile.id %>
-</h1>
+<div class="row align-items-center" style="height: 100vh;">
+	<div class="col-12 mx-auto text-center">
+		<h1>
+			<%= @profile.id %>
+		</h1>
+		
+		
+		<%= link_to send_email_administration_profile_path(@profile), class: "btn btn-primary mb-5" do %>
+			Envoyer un email à l'utilisateur
+		<% end %>
+
+		<p>
+			<%= link_to administration_items_path, class: "txt-infos" do %>
+				Retour
+			<% end %>
+		</p>
+	</div>
+
+</div>
 
 
-<%= link_to send_email_administration_profile_path(@profile), class: "btn btn-primary" do %>
-	Envoyer un email à l'utilisateur
-<% end %>

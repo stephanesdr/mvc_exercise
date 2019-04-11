@@ -19,6 +19,14 @@
 			<li class="sidebar-item">
 			<%= link_to "Deconnexion", destroy_admin_session_path, method: "delete", class: "nav-link dropdown-item" %>
 			</li>
+			<li class="sidebar-item">
+			<div class="py-5 my-5 mx-auto col-9 rounded-circle border" style="background-color: white;">
+				<h3 class="text-center" style="color: #38c6ae; font-weight: bolder">
+						prix moyen <br>
+					<%= Item.average_price.round(2) %>
+				</h3>
+			</div>
+			</li>
 
 		</ul>
 
