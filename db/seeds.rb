@@ -9,9 +9,8 @@ end
 
 1.upto(10) do |i|
   User.create!(
-    email: Faker::Internet.email, 
+    email: Faker::Internet.email,
     password: Faker::Internet.password(8)
   )
+  p "ITEM #{i} : créé"
 end
-
-
