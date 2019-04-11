@@ -1,6 +1,8 @@
 @import "template/main";
 @import "font-awesome";
 
-.sidebar-content { background-color: red !important;}
-
-
+.sidebar-content { background-color: #120e42 !important; }
+.dropdown-item { color: #7cc4b2; }
+.dropdown-item:hover { background-color: #a180da; color: #f8f9fa; }
+.border { border: 6px solid #a3d7c5 !important; }
+.sidebar-link, a.sidebar-link { background: rgb(61, 54, 102); }
