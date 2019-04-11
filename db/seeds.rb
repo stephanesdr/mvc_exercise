@@ -6,3 +6,12 @@
   )
   p "ITEM #{i} : créé"
 end
+
+1.upto(10) do |i|
+  User.create!(
+    email: Faker::Internet.email, 
+    password: Faker::Internet.password(8)
+  )
+end
+
+
