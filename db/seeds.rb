@@ -14,3 +14,18 @@ end
   )
   p "ITEM #{i} : créé"
 end
+
+el = 1
+while el <= 10
+  Profile.create!(
+    user_id: el
+  )
+  p "profile #{el}"
+  el += 1
+end
+
+Admin.create(
+  email: 'sdrmvc@yopmail.com',
+  password: 'password',
+  password_confirmation: 'password',
+)
