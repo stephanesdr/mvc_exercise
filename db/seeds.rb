@@ -3,7 +3,7 @@
 1.upto(10) do |i|
   Item.create!(
     original_price: Faker::Number.decimal(2),
-    name: Faker::Games::Pokemon.name.unique.name
+    name: Faker::Games::Pokemon.name
   )
   p "ITEM #{i} : créé"
 end
