@@ -14,6 +14,8 @@
 #
 
 class Item < ApplicationRecord
+  has_many :categorizations
+  has_many :categories, through: :categorizations
   validates :original_price, numericality: { greater_than: 0.0 }
   validates :original_price, presence: { message: "Original price must be present" }
   validates :discount_percentage, inclusion: { in: 0..100 }
