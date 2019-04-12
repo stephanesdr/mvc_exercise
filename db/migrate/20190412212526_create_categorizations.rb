@@ -9,6 +9,6 @@ class CreateCategorizations < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :categorizations, [:item_id, :category_id]
+    add_index :categorizations, %i[item_id category_id]
   end
 end

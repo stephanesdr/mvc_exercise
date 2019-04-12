@@ -14,7 +14,7 @@
 #
 
 class Item < ApplicationRecord
-  has_many :categorizations
+  has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
   validates :original_price, numericality: { greater_than: 0.0 }
   validates :original_price, presence: { message: "Original price must be present" }
