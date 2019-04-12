@@ -9,12 +9,12 @@
 end
 
 1.upto(10) do |i|
-  User.new(
+  users = User.new(
     email: Faker::Internet.email,
     password: Faker::Internet.password(8)
   )
-  User.skip_confirmation!
-  User.save
+  users.skip_confirmation!
+  users.save
   p "ITEM #{i} : créé"
 end
 
@@ -26,4 +26,3 @@ while el <= 10
   p "profile #{el}"
   el += 1
 end
-
