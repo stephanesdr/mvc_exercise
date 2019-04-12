@@ -6,4 +6,3 @@ Mailjet.configure do |config|
   config.default_from = ENV['MAIL']
   config.api_version = 'v3.1'
 end
-
